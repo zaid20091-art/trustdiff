@@ -39,7 +39,7 @@ jobs:
       status: ${{ steps.gate.outputs.status }}
     steps:
       - name: Check out the TRUSTED verifier from the base commit
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.base-sha }}
           path: trusted
@@ -66,7 +66,7 @@ jobs:
           print("verifier digest approved:", digest)
           PY
       - name: Check out the CANDIDATE (data only; never executed on this host)
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: refs/pull/${{ inputs.pr-number }}/head
           path: candidate
@@ -117,7 +117,7 @@ jobs:
           fi
       - name: Upload review evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: trustdiff-evidence
           path: ${{ runner.temp }}/td-evidence/
@@ -140,7 +140,7 @@ jobs:
       contents: read
     steps:
       - name: Check out the TRUSTED verifier from the base commit
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.base-sha }}
           path: trusted
@@ -167,7 +167,7 @@ jobs:
           print("verifier digest approved:", digest)
           PY
       - name: Check out the candidate (data only)
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: refs/pull/${{ inputs.pr-number }}/head
           path: candidate
@@ -178,7 +178,7 @@ jobs:
           HEAD_SHA: ${{ inputs.head-sha }}
         run: test "$(git -C candidate rev-parse HEAD)" = "$HEAD_SHA"
       - name: Download the evidence produced by the verify job
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: trustdiff-evidence
           path: ${{ runner.temp }}/td-evidence
@@ -207,7 +207,7 @@ jobs:
           export TRUSTDIFF_STATE_DIR="$RUNNER_TEMP/td-evidence"
           "$RUNNER_TEMP/sign-venv/bin/python" -E -s -B "$GITHUB_WORKSPACE/trusted/trustdiff.py" attest --key "$key" --principal "$PRINCIPAL" --include-failure --expected-baseline "$BASE_SHA" --expected-commit "$HEAD_SHA" --expected-repository "$REPOSITORY" --require-verifier-sha256 "$EXPECTED" --output "$RUNNER_TEMP/proof.json"
       - name: Upload the signed proof bundle
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: trustdiff-proof
           path: ${{ runner.temp }}/proof.json
