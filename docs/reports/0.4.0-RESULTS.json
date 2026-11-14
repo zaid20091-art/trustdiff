@@ -1,0 +1,878 @@
+{
+  "date": "2026-11-14",
+  "platform": "Windows 11",
+  "python": "3.13.9",
+  "git": "2.53.0.windows.2",
+  "git_lfs": "3.7.1",
+  "verifier_digest": "b5862c222fc983e3e03f03cc4a5315a803db889fa76c4553e7fd63f4c7dc292e",
+  "suites": [
+    {
+      "suite": "alpha_gates",
+      "collected": 16,
+      "passed": 16,
+      "skipped": 0,
+      "failed": 0,
+      "seconds": 90.753,
+      "checks": [
+        {
+          "name": "test_alpha_gates.AlphaGateTests.test_empty_contracts_exit_nonzero",
+          "status": "ok"
+        },
+        {
+          "name": "test_alpha_gates.AlphaGateTests.test_ledger_detects_tamper_delete_and_reorder",
+          "status": "ok"
+        },
+        {
+          "name": "test_alpha_gates.AlphaGateTests.test_waived_is_not_technical_claim_pass",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_baseline_contract_prevents_agent_weakening_policy",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_critical_risk_requires_coverage_even_when_weak_test_passes",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_docker_command_defense_in_depth_flags",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_generated_counterexample_fails_on_widened_role",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_report_sarif_and_markdown",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_signed_proof_and_tamper_replay_wrong_signer",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_signing_untrusted_bootstrap_refused",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_static_import_dependents",
+          "status": "ok"
+        },
+        {
+          "name": "test_beta_features.BetaSecurityTests.test_unknown_unsupported_contract_never_passes",
+          "status": "ok"
+        },
+        {
+          "name": "test_trustdiff.TrustDiffPrototypeTests.test_init_creates_config",
+          "status": "ok"
+        },
+        {
+          "name": "test_trustdiff.TrustDiffPrototypeTests.test_unauthorized_execution_fails_closed",
+          "status": "ok"
+        },
+        {
+          "name": "test_claims.ClaimsAndLedgerTests.test_claim_without_evidence_is_unknown",
+          "status": "ok"
+        },
+        {
+          "name": "test_claims.ClaimsAndLedgerTests.test_ledger_appends",
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "suite": "evidence_validator",
+      "collected": 29,
+      "passed": 27,
+      "skipped": 2,
+      "failed": 0,
+      "seconds": 246.805,
+      "checks": [
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_corrupt_ledger_is_invalid_evidence",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_dirty_worktree_makes_report_stale",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_editing_latest_json_after_check_is_invalid_evidence",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_genuine_unsigned_report_is_unverified_not_trusted",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_new_commit_makes_report_stale",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_not_run_when_no_report",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_original_p0_01_forgery_is_not_trusted",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_ready_is_never_emitted",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.ForgeryAndTamperTests.test_state_dir_changes_do_not_count_as_dirty",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.MalformedInputTests.test_bundle_errors_survive_hostile_types",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.MalformedInputTests.test_cli_verify_proof_fails_closed_on_hostile_bundle",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.MalformedInputTests.test_dangling_symlink_is_invalid_not_not_run",
+          "status": "skipped 'Windows symlink permission unavailable'"
+        },
+        {
+          "name": "test_evidence_validator.MalformedInputTests.test_malformed_inputs_never_raise_and_are_invalid",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.MalformedInputTests.test_oversize_report_is_rejected_without_reading_it_all",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.MalformedInputTests.test_symlinked_report_is_rejected",
+          "status": "skipped 'Windows symlink permission unavailable'"
+        },
+        {
+          "name": "test_evidence_validator.McpViewTests.test_mcp_functions_are_wired_to_the_validator",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.McpViewTests.test_mcp_reports_verified_only_with_external_anchors",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.PresentationTests.test_empty_items_for_missing_evidence_carry_a_warning",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.PresentationTests.test_item_counts_are_bounded",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.PresentationTests.test_untrusted_strings_are_clipped_and_control_characters_removed",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_expected_policy_digest_is_enforced",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_proof_replay_on_new_commit_is_stale_not_verified",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_signature_by_unlisted_key_is_rejected",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_tampered_bundle_report_breaks_trust",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_tampering_after_signing_breaks_trust",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_trust_store_inside_repository_is_ignored",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_unsigned_bundle_is_not_trusted",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_valid_signed_proof_is_verified",
+          "status": "ok"
+        },
+        {
+          "name": "test_evidence_validator.SignedProofTests.test_wrong_principal_is_rejected",
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "suite": "fork_pr_scenarios",
+      "collected": 13,
+      "passed": 13,
+      "skipped": 0,
+      "failed": 0,
+      "seconds": 107.434,
+      "checks": [
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_fork_pr_flow_reaches_a_fail_for_the_forbidden_pattern_and_produces_review_artifacts",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_hostile_git_config_cannot_execute_via_evidence_validator_either",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_hostile_git_config_in_the_checkout_is_refused_not_executed",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_pr_cannot_preseed_the_evidence_chain",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_pr_editing_the_gate_workflow_is_a_critical_uncovered_risk",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_pr_that_deletes_a_contract_is_judged_by_the_baseline_policy",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.PolicyAndWorkflowTamperingTests.test_pr_with_unpinned_image_cannot_execute_tests",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.VerifierIndependenceTests.test_clean_change_passes_with_the_trusted_verifier",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.VerifierIndependenceTests.test_extracted_base_verifier_matches_the_approved_digest",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.VerifierIndependenceTests.test_modified_verifier_in_base_checkout_is_detected",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.VerifierIndependenceTests.test_pr_cannot_substitute_a_different_approved_digest",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.VerifierIndependenceTests.test_pr_that_neuters_the_verifier_cannot_change_the_verdict",
+          "status": "ok"
+        },
+        {
+          "name": "test_fork_pr_scenarios.VerifierIndependenceTests.test_shadow_modules_in_the_candidate_are_never_imported",
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "suite": "input_hardening",
+      "collected": 30,
+      "passed": 28,
+      "skipped": 2,
+      "failed": 0,
+      "seconds": 318.807,
+      "checks": [
+        {
+          "name": "test_input_hardening.FuzzTests.test_clean_repo_path_rejects_traversal_and_control_characters",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.FuzzTests.test_evidence_validator_never_raises_and_never_verifies_random_reports",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.FuzzTests.test_js_scanner_is_fast_on_random_adversarial_text",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.FuzzTests.test_name_status_parser_never_raises_and_round_trips",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.FuzzTests.test_regex_worker_always_returns_a_decision",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.FuzzTests.test_untrusted_text_sanitisers_respect_their_bounds",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.FuzzTests.test_validate_contracts_only_ever_raises_value_error",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_catastrophic_regex_in_a_contract_yields_error_not_a_hang_or_pass",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_deeply_nested_or_oversized_policy_file_is_rejected_cleanly",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_diff_larger_than_the_limit_is_an_error_never_a_silent_pass",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_hostile_claims_file_is_rejected_cleanly",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_invalid_contract_fields_are_rejected_cleanly",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_invalid_regex_is_error_and_normal_regex_still_works",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_non_object_report_is_rejected_cleanly",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.HostileContractAndClaimInputs.test_report_rendering_survives_hostile_reports",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ProofBundleProperties.test_dropping_any_top_level_or_nested_key_is_rejected",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ProofBundleProperties.test_every_single_leaf_mutation_of_a_signed_bundle_is_rejected",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ProofBundleProperties.test_hostile_trust_stores_never_raise_and_never_verify",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ProofBundleProperties.test_random_garbage_bundles_never_raise_and_never_verify",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_challenge_discovery_survives_hostile_source",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_chatty_command_cannot_exhaust_verifier_memory",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_check_reports_unusual_paths",
+          "status": "skipped 'Windows does not support newline in a filename'"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_hostile_python_sources_degrade_instead_of_crashing",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_js_import_scanner_has_no_quadratic_backtracking",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_js_import_scanner_still_finds_real_imports",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_oversized_regular_file_is_not_slurped",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_patch_content_is_attributed_to_the_right_file_even_with_deceptive_names",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_tracked_symlink_to_a_host_file_is_not_followed",
+          "status": "skipped 'Windows symlink permission unavailable'"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_unicode_named_admin_function_is_no_longer_skipped_by_challenge_discovery",
+          "status": "ok"
+        },
+        {
+          "name": "test_input_hardening.ReproducedIssueRegressions.test_unusual_file_names_are_reported_exactly",
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "suite": "proof_v2",
+      "collected": 29,
+      "passed": 28,
+      "skipped": 1,
+      "failed": 0,
+      "seconds": 275.545,
+      "checks": [
+        {
+          "name": "test_proof_v2.ApprovalTests.test_approval_for_other_policy_or_forged_signature_blocks_verification",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.ApprovalTests.test_ci_key_cannot_approve_its_own_policy_change",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.ApprovalTests.test_signed_policy_approval_round_trip_and_binding",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_legacy_v1_trust_store_format_still_works",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_replay_on_another_commit_is_rejected",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_require_v2_refuses_legacy_bundle",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_reverification_cli_runs_no_tests_and_prints_scope",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_signing_refuses_unapproved_verifier",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_tampering_with_any_signed_attestation_field_is_detected",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_v2_bundle_binds_signer_verifier_and_scope",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.BundleV2Tests.test_verifier_digest_pinning",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.EvidenceStoreTests.test_an_existing_object_is_never_overwritten",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.EvidenceStoreTests.test_externally_pinned_head_detects_truncation",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.EvidenceStoreTests.test_publish_verify_and_write_once",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.EvidenceStoreTests.test_store_inside_the_repository_is_refused",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.EvidenceStoreTests.test_tampered_object_log_or_unlisted_object_is_detected",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.LedgerHonestyTests.test_verify_ledger_states_it_is_tamper_evident_only",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_keys_and_stores_must_live_outside_the_repository",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_retired_key_cannot_sign_after_retirement",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_revocation_is_absolute_for_past_and_future_bundles",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_revoking_unknown_key_fails_and_changes_nothing",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_rotation_keeps_old_signatures_valid_and_new_key_works",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_signing_in_the_future_or_before_key_creation_is_rejected",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.RotationRevocationTests.test_trust_store_with_mismatched_key_id_is_rejected",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.SupplyChainTests.test_any_modification_changes_the_digest",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.SupplyChainTests.test_cli_enforces_expected_digest",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.SupplyChainTests.test_every_module_is_in_the_manifest",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.SupplyChainTests.test_manifest_is_deterministic_and_covers_every_verifier_file",
+          "status": "ok"
+        },
+        {
+          "name": "test_proof_v2.SupplyChainTests.test_missing_or_symlinked_file_is_an_error",
+          "status": "skipped 'Windows symlink permission unavailable'"
+        }
+      ]
+    },
+    {
+      "suite": "release_features",
+      "collected": 57,
+      "passed": 48,
+      "skipped": 9,
+      "failed": 0,
+      "seconds": 206.44,
+      "checks": [
+        {
+          "name": "test_release_features.ReleaseFeatures.test_authenticated_failure_requires_explicit_merge_success",
+          "status": "ok"
+        },
+        {
+          "name": "test_release_features.ReleaseFeatures.test_four_domains_validate_expected_values_and_baseline",
+          "status": "ok"
+        },
+        {
+          "name": "test_release_features.ReleaseFeatures.test_independent_check_rejects_wrong_pin_and_accepts_protected_state",
+          "status": "ok"
+        },
+        {
+          "name": "test_release_features.ReleaseFeatures.test_lfs_uses_only_verified_local_content",
+          "status": "ok"
+        },
+        {
+          "name": "test_release_features.ReleaseFeatures.test_repair_replays_original_and_runs_the_full_gate",
+          "status": "ok"
+        },
+        {
+          "name": "test_release_features.ReleaseFeatures.test_snapshot_bypasses_hostile_smudge_commands_even_when_called_directly",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_argv_has_required_flags_and_no_escape_flags",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_challenge_script_is_copied_before_mount",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_image_pinning_helper",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_input_validation",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_mount_sources_that_expose_the_host_are_refused",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_non_regular_challenge_is_refused",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.ArgvTests.test_symlink_mount_is_refused",
+          "status": "skipped 'Windows symlink permission unavailable'"
+        },
+        {
+          "name": "test_runner_hardening.BoundedRunTests.test_missing_binary_is_reported_not_raised",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.BoundedRunTests.test_strict_overflow_kills_and_flags",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.BoundedRunTests.test_tail_keeps_the_end",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.BoundedRunTests.test_timeout_kills_grandchildren",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.CleanupTests.test_each_job_gets_a_unique_identity",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.CleanupTests.test_leftover_container_is_reported_not_hidden",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.CleanupTests.test_output_flood_is_bounded_and_kills_the_container",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.CleanupTests.test_timeout_kills_the_container_by_name_and_sweeps_by_label",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.CleanupTests.test_workspace_is_deleted_even_after_failure",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.IsolationRuntimeTests.test_cli_rejects_unknown_runtime",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.IsolationRuntimeTests.test_isolation_class_names",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.IsolationRuntimeTests.test_microvm_and_gvisor_runtimes_are_passed_through_when_registered",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.IsolationRuntimeTests.test_missing_runtime_fails_closed_without_falling_back_to_runc",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.IsolationRuntimeTests.test_only_allowlisted_runtimes_are_accepted",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_docker_socket_and_devices_absent",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_fork_bomb_is_contained_by_pids_limit",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_host_secret_env_is_not_inherited",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_network_is_disabled",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_runs_as_unprivileged_user_without_capabilities",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_timeout_removes_container_and_processes",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealDockerTests.test_workspace_is_read_only_and_clean",
+          "status": "skipped 'needs Docker and TRUSTDIFF_TEST_IMAGE (digest-pinned image present locally); provided by the docker-integration CI job'"
+        },
+        {
+          "name": "test_runner_hardening.RealIsolationRuntimeTests.test_workload_runs_under_the_stronger_runtime",
+          "status": "skipped 'needs Docker, TRUSTDIFF_TEST_IMAGE and a registered TRUSTDIFF_TEST_RUNTIME (runsc or kata)'"
+        },
+        {
+          "name": "test_runner_hardening.SnapshotTests.test_snapshot_is_exactly_the_tracked_commit",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.SnapshotTests.test_snapshot_rejects_bad_commit_argument",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.SnapshotTests.test_snapshot_uses_the_requested_commit_not_head",
+          "status": "ok"
+        },
+        {
+          "name": "test_runner_hardening.SnapshotTests.test_workspace_contains_no_secret_when_container_would_run",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_dropping_pinned_image_enforcement_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_executing_the_candidate_on_the_host_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_expression_injection_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_mutable_runner_image_tag_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_persisted_credentials_are_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_plain_pull_request_trigger_for_the_gate_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_reordering_digest_check_after_candidate_checkout_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_secret_in_the_verify_job_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_short_sha_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_signing_without_protected_environment_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_unpinned_action_is_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.PolicyCheckerSelfTests.test_write_permissions_and_missing_permissions_are_flagged",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.RealWorkflowTests.test_ci_runs_real_docker_tests",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.RealWorkflowTests.test_dependabot_waits_before_adopting_new_action_releases",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.RealWorkflowTests.test_every_workflow_passes_the_baseline_policy",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.RealWorkflowTests.test_gate_calls_the_local_reusable_workflow_with_least_privilege",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.RealWorkflowTests.test_gate_trust_boundaries",
+          "status": "ok"
+        },
+        {
+          "name": "test_workflow_policy.RealWorkflowTests.test_inline_digest_algorithm_matches_the_python_implementation",
+          "status": "ok"
+        }
+      ]
+    }
+  ],
+  "benchmark": {
+    "protocol": "trustdiff.synthetic-benchmark/v1",
+    "execution": "host, generated fixtures",
+    "rows": [
+      {
+        "domain": "authorization",
+        "variant": "control",
+        "source_sha256": "9dc64980835815a68695ffbbd85be33b75d794dca5890767e80f77964bc8ba75",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 0.707
+        },
+        "boundary": {
+          "verdict": "PASS",
+          "seconds": 5.817
+        }
+      },
+      {
+        "domain": "authorization",
+        "variant": "mutant",
+        "source_sha256": "8cde3243b50309365cfbacda735ae570f7dc4f41d9c273d58e41187996b308b0",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 2.54
+        },
+        "boundary": {
+          "verdict": "FAIL",
+          "seconds": 0.599
+        }
+      },
+      {
+        "domain": "money",
+        "variant": "control",
+        "source_sha256": "c0ad8b9a07058ab261f108c5f5f6cf6175eedc0093602a733385589ff456f3cd",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 2.623
+        },
+        "boundary": {
+          "verdict": "PASS",
+          "seconds": 0.665
+        }
+      },
+      {
+        "domain": "money",
+        "variant": "mutant",
+        "source_sha256": "8cde3243b50309365cfbacda735ae570f7dc4f41d9c273d58e41187996b308b0",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 1.799
+        },
+        "boundary": {
+          "verdict": "FAIL",
+          "seconds": 0.619
+        }
+      },
+      {
+        "domain": "database",
+        "variant": "control",
+        "source_sha256": "a46e35b691d0a540be85a6b0f7a55c33277e68b5210d48801f9639b04ccdb213",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 2.535
+        },
+        "boundary": {
+          "verdict": "PASS",
+          "seconds": 0.605
+        }
+      },
+      {
+        "domain": "database",
+        "variant": "mutant",
+        "source_sha256": "b17726db6ad0996833080cbf0166e7ea080feb3f8f3a6a38abbd1c7be74d40e4",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 1.429
+        },
+        "boundary": {
+          "verdict": "FAIL",
+          "seconds": 11.799
+        }
+      },
+      {
+        "domain": "api",
+        "variant": "control",
+        "source_sha256": "f15a0ee39d9a72b793fce7e7b01b7b02790cc3713a93e80bbcfea78840c581bd",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 8.807
+        },
+        "boundary": {
+          "verdict": "PASS",
+          "seconds": 7.852
+        }
+      },
+      {
+        "domain": "api",
+        "variant": "mutant",
+        "source_sha256": "4bd8560b05d82595150d8348138516a58a21d031dd6c17c57c7fcdbbe89bd3af",
+        "smoke": {
+          "verdict": "PASS",
+          "seconds": 2.582
+        },
+        "boundary": {
+          "verdict": "FAIL",
+          "seconds": 0.605
+        }
+      }
+    ],
+    "additional_mutants_detected": 4,
+    "control_failures": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "trustdiff": {
+      "command": "python3",
+      "args": ["-m", "trustdiff_mcp"],
+      "env": {
+        "TRUSTDIFF_ALLOWED_SIGNERS": "/ABSOLUTE/PATH/OUTSIDE/REPO/allowed_signers.json",
+        "TRUSTDIFF_PRINCIPAL": "your-ci-verifier"
+      }
+    }
+  }
+}

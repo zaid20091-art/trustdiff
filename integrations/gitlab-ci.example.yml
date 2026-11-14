@@ -1,0 +1,13 @@
+# EXAMPLE ONLY: install a trusted, pinned TrustDiff distribution from a protected
+# verifier project or GitLab registry; do not run checker from MR head.
+# Adapt to your GitLab runner, permissions and container executor before use.
+trustdiff-gate:
+  stage: test
+  image: python:3.11-slim
+  variables:
+    GIT_DEPTH: "0"
+  script:
+    - echo "Provision trusted verifier code and Docker/VM runner out-of-band"
+    - echo "Run trustdiff check --baseline \"$CI_MERGE_REQUEST_DIFF_BASE_SHA\" --runner docker --image <pinned-ref>"
+    - echo "This template fails until a trusted runner is connected."
+    - exit 1

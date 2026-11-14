@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "contracts": [
+    {
+      "id": "POLICY-001",
+      "description": "Changes to protected security checks require a separate, reviewed policy decision",
+      "type": "policy",
+      "match": "src/security/**",
+      "require_approval": true,
+      "covers": []
+    },
+    {
+      "id": "TEST-001",
+      "description": "Run the repository's unit and integration tests in a restricted runner",
+      "type": "test",
+      "command": ["python3", "-m", "unittest", "discover", "-s", "tests"],
+      "timeout_seconds": 90,
+      "covers": []
+    },
+    {
+      "id": "CHECK-001",
+      "description": "Fail if a newly added source line disables TLS verification (limited heuristic)",
+      "type": "deny_pattern",
+      "pattern": "verify\\s*=\\s*False|CERT_NONE",
+      "covers": []
+    }
+  ]
+}

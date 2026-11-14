@@ -1,0 +1,30 @@
+[project]
+name = "trustdiff"
+version = "0.4.0"
+description = "Evidence-first verification gate for AI- and human-authored changes"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+keywords = ["verification", "ai-coding", "supply-chain", "evidence", "git", "security"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Security",
+]
+
+[project.optional-dependencies]
+crypto = ["cryptography>=42"]
+mcp = ["mcp>=2,<3; python_version >= '3.11'"]
+
+[project.scripts]
+trustdiff = "trustdiff:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["trustdiff", "trustdiff_impact", "trustdiff_challenge", "trustdiff_runner", "trustdiff_proof", "trustdiff_safe", "trustdiff_evidence", "trustdiff_store", "trustdiff_supply", "trustdiff_repair", "trustdiff_mcp"]

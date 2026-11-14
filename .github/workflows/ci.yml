@@ -1,0 +1,60 @@
+# Tests the project itself. Plain `pull_request` (no secrets, read-only token): PR code runs here, never with privileges.
+name: TrustDiff CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.11', '3.12', '3.13']
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install test dependencies (signature tests and workflow-policy tests)
+        run: python -m pip install 'cryptography>=42' 'pyyaml>=6'
+      - name: Unit, security, fuzz and integration tests
+        run: python -m unittest discover -s tests -v
+      - name: Reproducible authorization counterexample fixture
+        run: python fixtures/security-regression/run_demo.py
+      - name: Clean installation and CLI smoke check
+        run: python -m pip install --no-deps .
+      - run: trustdiff --help
+      - name: Test editor integration
+        run: node --test integrations/vscode/extension.test.js
+
+  docker-integration:
+    name: docker-integration (real Docker, no mocks)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Pull the test image and resolve its immutable digest
+        run: |
+          set -euo pipefail
+          docker pull python:3.12-slim
+          ref="$(docker image inspect python:3.12-slim --format '{{index .RepoDigests 0}}')"
+          echo "TRUSTDIFF_TEST_IMAGE=$ref" >> "$GITHUB_ENV"
+      - name: Runner isolation, timeout cleanup and limits against real Docker
+        run: python -m unittest discover -s tests -p test_runner_hardening.py -v
+      - name: Check no TrustDiff containers were left behind
+        run: test -z "$(docker ps -aq --filter label=trustdiff.job)"

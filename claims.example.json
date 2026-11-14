@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "claims": [
+    {
+      "claim_id": "C-EXAMPLE-001",
+      "agent": "example-agent",
+      "claim": "The change is independently verified",
+      "requirements": ["DEMO-001", "TEST-001"]
+    }
+  ]
+}

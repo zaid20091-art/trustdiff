@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7      # do not adopt a brand-new release until it has had time to be scrutinised
+    groups:
+      actions:
+        patterns: ["*"]

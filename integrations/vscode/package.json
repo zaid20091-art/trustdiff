@@ -1,0 +1,29 @@
+{
+  "name": "trustdiff",
+  "displayName": "TrustDiff",
+  "description": "Inspect uncommitted and committed change risks using a trusted local TrustDiff installation.",
+  "publisher": "zaid-jameel-alotaibi",
+  "version": "0.4.0",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "capabilities": { "untrustedWorkspaces": { "supported": false }, "virtualWorkspaces": false },
+  "contributes": {
+    "commands": [{ "command": "trustdiff.review", "title": "TrustDiff: Review Changes" }],
+    "configuration": {
+      "title": "TrustDiff",
+      "properties": {
+        "trustdiff.executable": {
+          "type": "string", "default": "", "scope": "application",
+          "description": "Absolute path to the installed TrustDiff executable outside the workspace."
+        },
+        "trustdiff.watchOnSave": {
+          "type": "boolean", "default": false, "scope": "application",
+          "description": "Review local changes after a file save in a trusted workspace."
+        }
+      }
+    }
+  }
+}

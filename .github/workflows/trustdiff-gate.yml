@@ -1,0 +1,32 @@
+# Thin, protected caller. `pull_request_target` loads THIS file from the base branch, so a pull request
+# (including one from a fork) cannot edit the gate that judges it. The candidate is never executed on the
+# runner host (see trustdiff-verify.yml). Do NOT add steps here or there that run candidate content.
+#
+# One-time setup (repository or organisation settings, not files in a branch):
+#   variables: TRUSTDIFF_VERIFIER_SHA256 (output of `trustdiff verifier-digest`), TRUSTDIFF_RUNNER_IMAGE (image@sha256:...)
+#   optional signing: variable TRUSTDIFF_SIGNING_ENABLED=true, TRUSTDIFF_PRINCIPAL, and a protected environment
+#   `trustdiff-signing` holding the secret TRUSTDIFF_SIGNING_KEY.
+# Protect the base branch and publish the exact-head App check for branch rulesets.
+name: TrustDiff Gate
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions: {}
+
+concurrency:
+  group: trustdiff-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    if: ${{ github.event.pull_request.draft == false }}
+    permissions:
+      contents: read
+    uses: ./.github/workflows/trustdiff-verify.yml
+    with:
+      pr-number: ${{ github.event.pull_request.number }}
+      base-sha: ${{ github.event.pull_request.base.sha }}
+      head-sha: ${{ github.event.pull_request.head.sha }}
+      sign: ${{ vars.TRUSTDIFF_SIGNING_ENABLED == 'true' }}
